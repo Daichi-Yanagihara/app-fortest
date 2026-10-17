@@ -23,8 +23,10 @@ const addUser = async (username) => {
 // 実行例：addUser("高橋風香")
 
 
+// UPDATE: ユーザー情報の更新
 const updateUser = async (id, newUsername) => {
   const url = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/userTable?id=eq.${id}`;
+
 
   const response = await fetch(url, {
     method: "PATCH",
@@ -41,6 +43,7 @@ const updateUser = async (id, newUsername) => {
 // 実行例：updateUser(2, "田中花子")
 
 
+// DELETE: ユーザー削除
 const deleteUser = async (id) => {
   const url = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/userTable?id=eq.${id}`;
 
